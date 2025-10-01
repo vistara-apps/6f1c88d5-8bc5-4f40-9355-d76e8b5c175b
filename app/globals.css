@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Nature/Environmental Theme - Forest Green */
+  --color-bg: hsl(120, 25%, 98%);
+  --color-fg: hsl(120, 10%, 15%);
+  --color-accent: hsl(35, 91%, 62%);
+  --color-primary: hsl(142, 76%, 36%);
+  --color-primary-hover: hsl(142, 76%, 28%);
+  --color-surface: hsl(0, 0%, 100%);
+  --color-surface-glass: hsla(0, 0%, 100%, 0.7);
+  --color-border: hsl(120, 15%, 88%);
+  --color-text-muted: hsl(120, 5%, 45%);
+  --color-success: hsl(142, 76%, 36%);
+  --color-warning: hsl(35, 91%, 62%);
+  --color-error: hsl(0, 72%, 51%);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-card: 0 8px 24px hsla(120, 25%, 20%, 0.08);
+  --shadow-card-hover: 0 12px 32px hsla(120, 25%, 20%, 0.12);
+  --shadow-modal: 0 24px 64px hsla(120, 25%, 20%, 0.16);
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 20px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+}
+
+[data-theme="celo"] {
+  --color-bg: hsl(0, 0%, 0%);
+  --color-fg: hsl(0, 0%, 100%);
+  --color-accent: hsl(45, 97%, 68%);
+  --color-primary: hsl(45, 97%, 68%);
+  --color-primary-hover: hsl(45, 97%, 58%);
+  --color-surface: hsl(0, 0%, 10%);
+  --color-surface-glass: hsla(0, 0%, 10%, 0.7);
+  --color-border: hsl(0, 0%, 20%);
+  --color-text-muted: hsl(0, 0%, 60%);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+}
+
+[data-theme="solana"] {
+  --color-bg: hsl(270, 50%, 10%);
+  --color-fg: hsl(0, 0%, 100%);
+  --color-accent: hsl(290, 80%, 60%);
+  --color-primary: hsl(290, 80%, 60%);
+  --color-primary-hover: hsl(290, 80%, 50%);
+  --color-surface: hsl(270, 40%, 15%);
+  --color-surface-glass: hsla(270, 40%, 15%, 0.7);
+  --color-border: hsl(270, 30%, 25%);
+  --color-text-muted: hsl(270, 10%, 70%);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+[data-theme="base"] {
+  --color-bg: hsl(220, 50%, 10%);
+  --color-fg: hsl(0, 0%, 95%);
+  --color-accent: hsl(217, 100%, 50%);
+  --color-primary: hsl(217, 100%, 50%);
+  --color-primary-hover: hsl(217, 100%, 40%);
+  --color-surface: hsl(220, 40%, 15%);
+  --color-surface-glass: hsla(220, 40%, 15%, 0.7);
+  --color-border: hsl(220, 30%, 25%);
+  --color-text-muted: hsl(220, 10%, 70%);
+}
+
+[data-theme="coinbase"] {
+  --color-bg: hsl(220, 60%, 8%);
+  --color-fg: hsl(0, 0%, 95%);
+  --color-accent: hsl(217, 100%, 50%);
+  --color-primary: hsl(217, 100%, 50%);
+  --color-primary-hover: hsl(217, 100%, 40%);
+  --color-surface: hsl(220, 50%, 12%);
+  --color-surface-glass: hsla(220, 50%, 12%, 0.7);
+  --color-border: hsl(220, 40%, 20%);
+  --color-text-muted: hsl(220, 10%, 65%);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-bg text-fg;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface-glass backdrop-blur-md border border-border rounded-lg;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-hover transition-all duration-200 shadow-card hover:shadow-card-hover;
+  }
+
+  .btn-secondary {
+    @apply bg-surface text-fg border border-border px-6 py-3 rounded-lg font-medium hover:bg-opacity-80 transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-surface border border-border rounded-lg text-fg placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200;
+  }
+
+  .metric-card {
+    @apply glass-card p-6 hover:shadow-card-hover transition-all duration-200;
+  }
+
+  .tree-card {
+    @apply glass-card overflow-hidden hover:shadow-card-hover transition-all duration-200 cursor-pointer;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-verified {
+    @apply badge bg-success bg-opacity-10 text-success border border-success border-opacity-20;
+  }
+
+  .badge-pending {
+    @apply badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-20;
+  }
+
+  .badge-community {
+    @apply badge bg-accent bg-opacity-10 text-accent border border-accent border-opacity-20;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
