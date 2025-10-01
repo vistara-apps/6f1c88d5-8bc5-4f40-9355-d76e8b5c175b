@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "TreePal",
+    "subtitle": "Built with Zara",
+    "description": "TreePal is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://6f1c88d58bc54f409355d76e8b5c175b-73v0.vercel.app",
+    "splashImageUrl": "https://6f1c88d58bc54f409355d76e8b5c175b-73v0.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://6f1c88d58bc54f409355d76e8b5c175b-73v0.vercel.app/image.png",
+    "tagline": "TreePal",
+    "screenshotUrls": [
+      "https://6f1c88d58bc54f409355d76e8b5c175b-73v0.vercel.app/screenshot.png",
+      "https://6f1c88d58bc54f409355d76e8b5c175b-73v0.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://6f1c88d58bc54f409355d76e8b5c175b-73v0.vercel.app/api/webhook"
+  }
+}
